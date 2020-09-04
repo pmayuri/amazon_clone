@@ -7,16 +7,17 @@ function Subtotal () {
 
          <div className="subtotal">
               {/* price */}
-<CurrencyFormat/>
+        <CurrencyFormat
 
-
-
-
-<button>PROceed to Checkout</button>
-</div>
-
-
-    );
+        decimalScale={2}
+        value={0}
+        displayTypes={"text"}
+        thousandSeparator={true}
+        prefix={"INR"}
+        />
+            <button>Proceed to Checkout</button>
+        </div>
+);
 }
 
 export default Subtotal;
