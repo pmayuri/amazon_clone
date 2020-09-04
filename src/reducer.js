@@ -27,7 +27,27 @@ case "ADD_TO_BASKET":
 
 case "REMOVE_FROM_BASKET":
     // logic for reemoving items fromthe baslket
-    return { state }
+
+    // WE CLONED THE BASKET HERE
+    let newBasket = [...state.basket];
+
+const index = state.basket.findIndex((basketItem) =>  basketItem.id === action.id);
+
+
+if (index >= 0 ) {
+    // item exist in basket, remove it .. 
+newBasket.splice(index,1);
+
+} else {
+console.warn(
+    'cant remove product (id: ${action.id}) as its not'
+);
+
+}
+  
+
+
+    return {...state, basket: newBasket };
     default:
         return state;
 }

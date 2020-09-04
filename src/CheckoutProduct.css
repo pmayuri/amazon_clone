@@ -1,5 +1,7 @@
 .checkoutProduct {
 display: flex;
+margin-top: 20px;
+margin-top: 20px;
 }
 
 .checkoutProduct__image {
@@ -12,6 +14,26 @@ height: 180px;
 .checkoutProduct__info {
 padding-left: 20px;
 }
+
+
+
+.checkoutProduct__rating {
+display: flex;
+color: goldenrod;
+
+}
+
+
+.checkoutProduct__title {
+font-size: 17px;
+font-weight: 800;
+
+
+}
+
+
+
+
 
 .checkoutProduct__info > button {
 background:  #f0c14b;
