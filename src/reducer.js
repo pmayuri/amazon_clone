@@ -1,16 +1,5 @@
 export const initialState = {
-basket: [{
-    id:"1",
-    title:"Optimum Nutrition (ON) Gold Standard 100% Whey Protein Powder - 2 lbs, 907 g (Double Rich Chocolate)",
-    price:2773,
-    rating:5,
-    image:"https://images-na.ssl-images-amazon.com/images/I/716uIeq4rfL._SL1500_.jpg"
-    
-
-
-
-
-},],
+basket: [],
 user: null,
 };
 
@@ -21,6 +10,12 @@ basket?.reduce((amount,item) => item.price + amount, 0 );
 const reducer = (state,action) => {
     console.log(action);
 switch (action.type) {
+case "SET_USER":
+    return {
+        ...state,
+        user: action.user,
+    }; 
+
 case "ADD_TO_BASKET":
     // logic for adding item to basket 
     return { 
@@ -48,7 +43,7 @@ console.warn(
 );
 
 }
-  
+   
 
 
     return {...state, basket: newBasket };

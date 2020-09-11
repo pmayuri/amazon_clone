@@ -16,19 +16,34 @@ const [{ basket }, dispatch] = useStateValue();
 // PIECE OF CODE WHICH RUNS BASED ON A GIVEN CONDITION
 
 useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
+ const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
           // the user is logged in.....
+          dispatch({
+            type:"SET_USER" ,
+            user: authUser,
+          });
       }
       else {
     // the user is logged out...
-    }
-    })
-  }, []);
+ 
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+ });
 
 
 
-  return (
+  return () => {
+// any cleanup will go in here...
+    unsubscribe();
+};
+}, []);
+
+
+return (
     <Router>
       <div className="app">
          <Switch>
@@ -47,8 +62,8 @@ useEffect(() => {
         </Switch>
       </div>
     </Router>
+)
 
-  );
 }
 
 export default App;
