@@ -10,7 +10,7 @@ import { auth } from "./firebase";
 
 
 function App() {
-const [{ basket }, dispatch] = useStateValue();
+const [ {user},dispatch] = useStateValue();
 
 // USEEFFECT <<<< POWERFUL
 // PIECE OF CODE WHICH RUNS BASED ON A GIVEN CONDITION
@@ -22,7 +22,7 @@ useEffect(() => {
           dispatch({
             type:"SET_USER" ,
             user: authUser,
-          });
+          })
       }
       else {
     // the user is logged out...
@@ -41,6 +41,8 @@ useEffect(() => {
     unsubscribe();
 };
 }, []);
+
+console.log("USER IS >>> ",user);
 
 
 return (

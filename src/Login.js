@@ -13,8 +13,7 @@ function Login() {
         event.preventDefault(); // this stops refresh
         // do the login logic
 
-        auth
-        .signInWithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(email, password)
             .then((auth) => {
                 // logged in, redirect to homepage..
     history.push("/");
@@ -27,8 +26,9 @@ function Login() {
         // do the register logic
 
         auth.createUserWithEmailAndPassword(email,password)
-        .then(auth => {
+        .then((auth) => {
 // created a user and logged in, redirect to homepage
+            history.push("/");
 
         })
     .catch((e) => alert(e.message));
@@ -42,8 +42,10 @@ function Login() {
                     src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                     alt=""
                 />
-
+ 
             </Link>
+
+
             <div className="login__container">
                 <h1>Sign in</h1>
                 <form>
