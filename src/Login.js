@@ -39,7 +39,7 @@ function Login() {
              <Link to="/">
                 <img
                     className="login__logo"
-                    src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                    src="https://indianapublicmedia.org/images/news-images/amazon-logo.jpg"
                     alt=""
                 />
  

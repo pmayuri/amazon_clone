@@ -12,14 +12,15 @@ function Checkout() {
             <div className="checkout__left">
 
                 <img
-                    clasName="checkout__ad"
-                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/AmazonBusiness/SummerSale2019/Nonprime/Main-Banner_1500_400_0205._CB465490718_.jpg"
+                    className="checkout__ad"
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/digital/music/merch/India/2017/Weekly/0912/Download_the_apps_music_india_hero.jpg"
                     alt=""
                 />
                 {basket?.length === 0 ? (
                     <div>
-                        <h2>Your Shopping Basket is empty </h2>
-                        <p> you have no items blablablabla</p>
+                        <h2>Shopping Cart</h2>
+                        <h2>Your Shopping Cart is empty. </h2>
+                        <p> You have items saved to buy later. To buy one or more now, click "Move to cart" next to the item.</p>
                     </div>
                 ) : (
                         <div>
